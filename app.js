@@ -20,8 +20,13 @@ app.use(express.static('public'));
 // });
 
 // DEV Ruta index
+// El controlador es esta funcion callback que tenemos aqui
+// Las options: es todo lo que se quiera enviar o mandar como argumento a la vista que se renderizara
 app.get('/', (req, res) => {
-  res.render( 'home');
+  res.render( 'home',{
+    nombre: 'Jose Enrique',
+    titulo: 'Curso de Node'
+  });
 });
 
 // DEV Ruta generic
