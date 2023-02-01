@@ -3,6 +3,9 @@ const app = express();
 
 const port = 8080;
 
+// TODO: require('hbs')
+app.set('view engine', 'hbs');
+
 // servir contenido estático
 app.use(express.static('public'));
 
@@ -17,11 +20,10 @@ app.use(express.static('public'));
 // });
 
 // DEV Ruta index
-// app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
+  res.render( 'home');
+});
 
-//   res.sendFile( __dirname + '/public/index.html');
-
-// });
 // DEV Ruta generic
 app.get('/generic', (req, res) => {
 
