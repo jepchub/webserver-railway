@@ -3,9 +3,9 @@
 const http = require('http');//nos ayuda a crear un servidor web local
 
 // metodo o funcion que nos ayuda a crear el server que contiene un callback que sera disparado con cierts argumentos estos argumentos son(request y response)
-// "request" es lo que estan solicitando por parte del cliente - toda la informacion del url que nos estan pidiendo en mi sitio web "los headers de la peticion los argumentos" es decir todo lo ques es la request es decir la solicitud a mi webserver se encuentra aqui
+// "request" req es lo que estan solicitando por parte del cliente - toda la informacion del url que nos estan pidiendo en mi sitio web "los headers de la peticion los argumentos" es decir todo lo ques es la request es decir la solicitud a mi webserver se encuentra aqui
 // "cliente" puede ser cualquier persona que se encuentre con cualquier celular conectandose a su web server , otro servidor que se quiera conectar a su webserver, cualquier cosa que este intentando acceder a algun recurso de mi servidor en el puerto que estoy utilizando
-// "response" es lo que mi server le va a responder cuando procesemos la Request al cliente o a la peticion http
+// "response" res es lo que mi server le va a responder cuando procesemos la Request al cliente o a la peticion http
 
 http.createServer( (req, res) => {
   // console.log(req);

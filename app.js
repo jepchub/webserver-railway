@@ -1,10 +1,13 @@
 const express = require('express');
-const app = express();
+const hbs = require('hbs');
 
+const app = express();
 const port = 8080;
 
-// TODO: require('hbs')
+// DEV Handlebars
 app.set('view engine', 'hbs');
+// TODO: require('hbs')
+hbs.registerPartials( __dirname + '/views/partials', function(err){});
 
 // servir contenido estático
 app.use(express.static('public'));
@@ -32,13 +35,21 @@ app.get('/', (req, res) => {
 // DEV Ruta generic
 app.get('/generic', (req, res) => {
 
-  res.sendFile( __dirname + '/public/generic.html')
+  // res.sendFile( __dirname + '/public/generic.html')
+  res.render('generic',{
+    nombre: 'Jose Enrique',
+    titulo: 'Curso Node'
+  });
 
 });
 // DEV Ruta elements
 app.get('/elements', (req, res) => {
 
-  res.sendFile( __dirname + '/public/elements.html')
+  // res.sendFile( __dirname + '/public/elements.html')
+  res.render('elements', {
+    nombre: 'Jose Enrique',
+    titulo: 'Curso Nodejs'
+  })
 
 });
 
